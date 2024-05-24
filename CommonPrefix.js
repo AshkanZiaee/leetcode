@@ -3,11 +3,11 @@ var longestCommonPrefix = function (strs) {
   let prefix = ""
   for (let i = 0; i < strs[0].length; i++) {
     let character = strs[0][i]
-    for (let j = 1; j < strs.length; j++) {
+    for (let j = 0; j < strs.length; j++) {
       if (strs[j][i] !== character) return prefix
     }
     prefix += character
   }
   return prefix
 }
-console.log(longestCommonPrefix(["flower", "flow", "flight"]))
+longestCommonPrefix(["flower", "flow", "flight"])

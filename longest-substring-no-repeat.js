@@ -1,16 +1,16 @@
 var lengthOfLongestSubstring = function (s) {
   let leftPointer = 0
-  let longest = 0
   let mySet = new Set()
-  for (let rightPointer = 0; rightPointer < s.length; rightPointer++) {
-    while (mySet.has(s[rightPointer])) {
+  let longest = 0
+  for (let rightPoitner = 0; rightPoitner < s.length; rightPoitner++) {
+    while (mySet.has(s[rightPoitner])) {
       mySet.delete(s[leftPointer])
       leftPointer++
     }
-    let w = rightPointer - leftPointer + 1
+    let w = rightPoitner - leftPointer + 1
     longest = Math.max(longest, w)
-    mySet.add(s[rightPointer])
+    mySet.add(s[rightPoitner])
   }
   return longest
 }
-lengthOfLongestSubstring("abcabcbb")
+console.log(lengthOfLongestSubstring("abcabcbb"))

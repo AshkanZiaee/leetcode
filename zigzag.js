@@ -1,21 +1,16 @@
 function convert(s, numRows) {
   if (numRows === 1) return s
-  const arrayOfStrings = Array(numRows).fill("")
+  let res = new Array(numRows).fill("")
+  let direction = false
   let count = 0
-  let direction = true
-
   for (let i = 0; i < s.length; i++) {
-    if (direction) {
-      arrayOfStrings[count] = arrayOfStrings[count] + s[i]
-      count++
-    } else if (!direction) {
-      arrayOfStrings[count] = arrayOfStrings[count] + s[i]
-      count--
-    }
-    if (count === 0) direction = true
-    if (count === numRows - 1) direction = false
+    res[count] += s[i]
+    if (count >= numRows - 1) {
+      direction = !direction
+    } else if (count === 0) direction = !direction
+    direction ? count++ : count--
   }
-  return arrayOfStrings.join("")
+  return res.join("")
 }
 
-convert("PAYPALISHIRING", 7)
+convert("AB", 3)

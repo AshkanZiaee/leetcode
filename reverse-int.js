@@ -1,21 +1,22 @@
 function reverse(x) {
-  let limit_one = 2 ** 31 * -1
-  let limit_two = 2 ** 31 - 1
-  let arrayedNumbers = JSON.stringify(x).split("")
-  let reversed = []
-  for (let i = arrayedNumbers.length - 1; i >= 0; i--) {
-    if (arrayedNumbers[i] !== "-") reversed.push(arrayedNumbers[i])
-    else {
-      reversed.unshift(arrayedNumbers[i])
+  const stringifiedInt = String(x)
+  let res = ""
+  let upperLimit = 2 ** 31 - 1
+  let lowerLimit = -(2 ** 31)
+  let isNegative = false
+  for (let i = stringifiedInt.length - 1; i >= 0; i--) {
+    if (stringifiedInt[i] === "-") {
+      isNegative = true
+      continue
     }
+    res += stringifiedInt[i]
   }
-  let res = Number(reversed.join(""))
-  if (res > limit_two || res < limit_one) {
-    return 0
-  }
-  return res
-}
+  const numberedRes = isNegative ? -Number(res) : Number(res)
 
-reverse(1463847412)
-1463847412
-2147483641
+  return numberedRes > upperLimit
+    ? 0
+    : numberedRes < lowerLimit
+    ? 0
+    : numberedRes
+}
+console.log(reverse(-123))

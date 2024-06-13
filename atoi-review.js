@@ -16,16 +16,14 @@ var myAtoi = function (s) {
   }
   for (let i = index; i < s.length; i++) {
     let num = s.charCodeAt(i) - 48
-    if (num < 0 || num > 9) {
-      break
-    }
+    if (num < 0 || num > 9) break
     res *= 10
     res += num
   }
-  let min = -(2 ** 31)
-  let max = 2 ** 31 - 1
-  res = res > max ? max : res < min ? min : res
-  return isNeg ? -res : res
+  let upperLimit = 2 ** 31 - 1
+  let lowerLimit = -(2 ** 31)
+  res = isNeg ? -res : res
+  return res > upperLimit ? upperLimit : res < lowerLimit ? lowerLimit : res
 }
 
-console.log(myAtoi("+1"))
+console.log(myAtoi("     -91283472332"))

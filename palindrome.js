@@ -1,10 +1,11 @@
 var isPalindrome = function (x) {
-  const arrayedNumbers = JSON.stringify(x).split("")
-  let res = ""
-  for (let i = arrayedNumbers.length - 1; i >= 0; i--) {
-    res += arrayedNumbers[i]
+  const stringifiedNumber = String(x)
+  let res = 0
+  for (let i = stringifiedNumber.length - 1; i >= 0; i--) {
+    res *= 10
+    res += Number(stringifiedNumber[i])
   }
-  return x === Number(res) ? true : false
+  return res === x
 }
 
 console.log(isPalindrome(357))

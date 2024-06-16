@@ -1,4 +1,5 @@
 var intToRoman = function (num) {
+  let res = ""
   const romanTable = {
     M: 1000,
     CM: 900,
@@ -14,18 +15,13 @@ var intToRoman = function (num) {
     IV: 4,
     I: 1,
   }
-
-  let res = ""
-  Object.entries(romanTable).forEach((letter) => {
-    let [symbol, value] = letter
-    if (num / value >= 1) {
-      let remainder = Math.floor(num / value)
-      res += symbol.repeat(remainder)
+  Object.entries(romanTable).forEach(([symbol, value]) => {
+    if (num / value > 0) {
+      let count = Math.floor(num / value)
+      res += symbol.repeat(count)
       num = num % value
     }
   })
-
   return res
 }
-
 intToRoman(3749)

@@ -10,15 +10,11 @@ var romanToInt = function (s) {
   }
   let total = 0
   for (let i = 0; i < s.length; i++) {
-    let current = s[i]
-    let next = s[i + 1]
-    if (symbols[current] < symbols[next]) {
-      total -= symbols[current]
-    } else {
-      total += symbols[current]
+    if (symbols[s[i]] < symbols[s[i + 1]]) total -= symbols[s[i]]
+    else {
+      total += symbols[s[i]]
     }
   }
-  console.log(total)
   return total
 }
-romanToInt("IV")
+romanToInt("LVIII")

@@ -1,26 +1,26 @@
 function longestPalindrome(s) {
-  let result = ""
-
-  function isPalindrome(s, leftPointer, rightPointer) {
-    res = ""
-    while (
-      s[leftPointer] === s[rightPointer] &&
-      leftPointer >= 0 &&
-      rightPointer < s.length
-    ) {
-      res = s.slice(leftPointer, rightPointer + 1)
-      leftPointer--
-      rightPointer++
+  let res = ""
+  let left = 0
+  let right = 0
+  function isPalindrome(l, r, s) {
+    let result = ""
+    while (l >= 0 && r <= s.length && s[l] === s[r]) {
+      result = s.slice(l, r + 1)
+      l--
+      r++
     }
-    return res
+
+    return result
   }
   for (let i = 0; i < s.length; i++) {
-    let evenRes = isPalindrome(s, i, i)
-    let oddRes = isPalindrome(s, i, i + 1)
-    let tempRes = evenRes.length > oddRes.length ? evenRes : oddRes
-    result = tempRes.length > result.length ? tempRes : result
+    left = i
+    right = i
+    let evenPal = isPalindrome(left, right + 1, s)
+    let oddPal = isPalindrome(left, right, s)
+    let resPal = evenPal.length > oddPal.length ? evenPal : oddPal
+    res = res.length > resPal.length ? res : resPal
   }
-  return result
+  return res
 }
 
 longestPalindrome("cbbd")

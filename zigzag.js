@@ -1,16 +1,16 @@
 function convert(s, numRows) {
   if (numRows === 1) return s
-  let res = new Array(numRows).fill("")
-  let direction = false
+  let tempArrays = Array(numRows).fill("")
+  let direction = true
   let count = 0
   for (let i = 0; i < s.length; i++) {
-    res[count] += s[i]
-    if (count >= numRows - 1) {
-      direction = !direction
-    } else if (count === 0) direction = !direction
-    direction ? count++ : count--
+    tempArrays[count] += s[i]
+    if (direction) count++
+    else if (!direction) count--
+    if (count === numRows - 1) direction = false
+    if (count === 0) direction = true
   }
-  return res.join("")
+  return tempArrays.join("")
 }
 
-convert("AB", 3)
+convert("PAYPALISHIRING", 3)

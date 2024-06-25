@@ -9,7 +9,10 @@ var reverse = function (x) {
     }
     res += stringifiedNumber[i]
   }
-  return isNeg ? -1 * Number(res) : Number(res)
+  res = Number(res)
+  if (res > 2 ** 31 - 1) return 0
+  if (res < 2 ** 31 * -1) return 0
+  return isNeg ? -1 * res : res
 }
 
 console.log(reverse(-4560))

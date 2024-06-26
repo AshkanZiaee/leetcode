@@ -1,29 +1,27 @@
 var myAtoi = function (s) {
   let index = 0
-  let res = 0
   let isNeg = false
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] === " ") continue
-    else {
-      index = i
-      break
-    }
+  let upperLimit = 2 ** 31 - 1
+  let lowerLimit = 2 ** 31 * -1
+  let res = ""
+  while (s[index] === " ") {
+    index++
   }
-
-  if (s[index] === "-" || s[index] === "+") {
+  if (s[index] === "+" || s[index] === "-") {
     isNeg = s[index] === "-"
     index++
   }
   for (let i = index; i < s.length; i++) {
     let num = s.charCodeAt(i) - 48
-    if (num < 0 || num > 9) break
-    res *= 10
-    res += num
+    if (num < 0 || num > 9) {
+      break
+    } else {
+      res += s[i]
+    }
   }
-  let upperLimit = 2 ** 31 - 1
-  let lowerLimit = -(2 ** 31)
-  res = isNeg ? -res : res
-  return res > upperLimit ? upperLimit : res < lowerLimit ? lowerLimit : res
+  res = isNeg ? Number(res) * -1 : Number(res)
+  res = res > upperLimit ? upperLimit : res < lowerLimit ? lowerLimit : res
+  return res
 }
 
-console.log(myAtoi("     -91283472332"))
+console.log(myAtoi("   -042"))

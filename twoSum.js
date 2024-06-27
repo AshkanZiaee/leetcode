@@ -5,7 +5,8 @@ function twoSum(nums, target) {
     let complementary = target - nums[i]
     if (myMap.has(complementary)) return [i, myMap.get(complementary)]
     myMap.set(nums[i], i)
+    console.log(myMap)
   }
 }
 
-console.log(twoSum([2, 7, 11, 15], 9))
+console.log(twoSum([2, 11, 15, 7], 9))

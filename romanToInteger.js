@@ -7,14 +7,14 @@ var romanToInt = function (s) {
     C: 100,
     D: 500,
     M: 1000,
-  }
-  let total = 0
+  };
+  let total = 0;
   for (let i = 0; i < s.length; i++) {
-    if (symbols[s[i]] < symbols[s[i + 1]]) total -= symbols[s[i]]
+    if (symbols[s[i]] < symbols[s[i + 1]]) total -= symbols[s[i]];
     else {
-      total += symbols[s[i]]
+      total += symbols[s[i]];
     }
   }
-  return total
-}
-romanToInt("LVIII")
+  return total;
+};
+romanToInt("LVIII");

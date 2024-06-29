@@ -1,9 +1,9 @@
 function factorial(n) {
-  let res = 1
+  let res = 1;
   for (let i = 2; i <= n; i++) {
-    res = res * i
+    res = res * i;
   }
-  return res
+  return res;
 }
 
-console.log(factorial(5))
+console.log(factorial(5));

@@ -13,16 +13,16 @@ var intToRoman = function (num) {
     ["D", 500],
     ["CM", 900],
     ["M", 1000],
-  ]
-  let res = ""
+  ];
+  let res = "";
   for (let i = Dictionary.length - 1; i >= 0; i--) {
-    const [symbol, value] = Dictionary[i]
+    const [symbol, value] = Dictionary[i];
     if (num / value) {
-      let count = num / value
-      res += symbol.repeat(count)
-      num = num % value
+      let count = num / value;
+      res += symbol.repeat(count);
+      num = num % value;
     }
   }
-  return res
-}
-intToRoman(3749)
+  return res;
+};
+intToRoman(3749);

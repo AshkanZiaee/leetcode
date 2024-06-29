@@ -1,5 +1,5 @@
 var intToRoman = function (num) {
-  let res = ""
+  let res = "";
   const romanTable = {
     M: 1000,
     CM: 900,
@@ -14,14 +14,14 @@ var intToRoman = function (num) {
     V: 5,
     IV: 4,
     I: 1,
-  }
+  };
   Object.entries(romanTable).forEach(([symbol, value]) => {
     if (num / value > 0) {
-      let count = Math.floor(num / value)
-      res += symbol.repeat(count)
-      num = num % value
+      let count = Math.floor(num / value);
+      res += symbol.repeat(count);
+      num = num % value;
     }
-  })
-  return res
-}
-intToRoman(3749)
+  });
+  return res;
+};
+intToRoman(3749);

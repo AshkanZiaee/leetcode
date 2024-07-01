@@ -1,20 +1,27 @@
 function longestPalindrome(s) {
-  let result = "";
+  let palindrome = "";
 
-  function isPal(s, l, r) {
-    while (l >= 0 && r < s.length && s[l] === s[r]) {
-      l--;
-      r++;
+  function isPalindrome(left, right, s) {
+    while (s[left] === s[right] && left >= 0 && right < s.length) {
+      left--;
+      right++;
     }
-    return s.slice(l + 1, r);
+    return s.slice(left + 1, right);
   }
+
   for (let i = 0; i < s.length; i++) {
-    let oddPal = isPal(s, i, i);
-    let evenPal = isPal(s, i, i + 1);
-    let palResult = oddPal.length > evenPal.length ? oddPal : evenPal;
-    result = result.length > palResult.length ? result : palResult;
+    let oddPalindrome = isPalindrome(i, i, s);
+    let evenPalindrome = isPalindrome(i, i + 1, s);
+    let currentPalindrome =
+      oddPalindrome.length > evenPalindrome.length
+        ? oddPalindrome
+        : evenPalindrome;
+    palindrome =
+      currentPalindrome.length > palindrome.length
+        ? currentPalindrome
+        : palindrome;
   }
-  return result;
+  return palindrome;
 }
 
 longestPalindrome("babad");

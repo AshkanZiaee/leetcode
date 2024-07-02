@@ -1,22 +1,20 @@
 function reverse(x) {
-  const stringifiedInt = String(x);
-  let res = "";
-  let upperLimit = 2 ** 31 - 1;
-  let lowerLimit = -(2 ** 31);
-  let isNegative = false;
-  for (let i = stringifiedInt.length - 1; i >= 0; i--) {
-    if (stringifiedInt[i] === "-") {
-      isNegative = true;
+  const stringNumber = String(x);
+  let result = "";
+  let isNeg = false;
+  const upperLimit = 2 ** 31 - 1;
+  const lowerLimit = -(2 ** 31);
+  for (let i = stringNumber.length - 1; i >= 0; i--) {
+    if (stringNumber[i] === "-") {
+      isNeg = true;
       continue;
     }
-    res += stringifiedInt[i];
+    result = result + stringNumber[i];
   }
-  const numberedRes = isNegative ? -Number(res) : Number(res);
-
-  return numberedRes > upperLimit
-    ? 0
-    : numberedRes < lowerLimit
-      ? 0
-      : numberedRes;
+  result = Number(result);
+  result = isNeg === true ? -1 * result : result;
+  if (result > upperLimit) return 0;
+  else if (result < lowerLimit) return 0;
+  return result;
 }
-console.log(reverse(-123));
+console.log(reverse(-1230));

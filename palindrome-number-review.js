@@ -7,4 +7,4 @@ var isPalindrome = function (x) {
   return res === stringifiedNumber;
 };
 
-console.log(isPalindrome(131));
+console.log(isPalindrome(-131));

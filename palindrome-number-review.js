@@ -1,10 +1,10 @@
 var isPalindrome = function (x) {
-  let stringifiedNumber = String(x);
-  let res = "";
-  for (let i = stringifiedNumber.length - 1; i >= 0; i--) {
-    res += stringifiedNumber[i];
+  let result = "";
+  const stringNumber = String(x);
+  for (let i = stringNumber.length - 1; i >= 0; i--) {
+    result = result + stringNumber[i];
   }
-  return res === stringifiedNumber;
+  return result === stringNumber;
 };
 
 console.log(isPalindrome(-131));

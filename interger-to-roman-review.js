@@ -1,6 +1,6 @@
 var intToRoman = function (num) {
-  let res = "";
-  const romanTable = {
+  let result = "";
+  const romanObj = {
     M: 1000,
     CM: 900,
     D: 500,
@@ -15,13 +15,14 @@ var intToRoman = function (num) {
     IV: 4,
     I: 1,
   };
-  Object.entries(romanTable).forEach(([symbol, value]) => {
+  Object.entries(romanObj).forEach((pair) => {
+    const [symbol, value] = pair;
     if (num / value > 0) {
       let count = Math.floor(num / value);
-      res += symbol.repeat(count);
+      result = result + symbol.repeat(count);
       num = num % value;
     }
   });
-  return res;
+  return result;
 };
 intToRoman(3749);

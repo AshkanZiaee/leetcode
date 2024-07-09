@@ -25,4 +25,4 @@ var intToRoman = function (num) {
   });
   return result;
 };
-intToRoman(3749);
+intToRoman(1236);

@@ -1,5 +1,6 @@
 var romanToInt = function (s) {
-  const symbols = {
+  let result = 0;
+  const symbolsToValue = {
     I: 1,
     V: 5,
     X: 10,
@@ -8,13 +9,13 @@ var romanToInt = function (s) {
     D: 500,
     M: 1000,
   };
-  let total = 0;
   for (let i = 0; i < s.length; i++) {
-    if (symbols[s[i]] < symbols[s[i + 1]]) total -= symbols[s[i]];
-    else {
-      total += symbols[s[i]];
+    if (symbolsToValue[s[i]] < symbolsToValue[s[i + 1]]) {
+      result = result - symbolsToValue[s[i]];
+    } else {
+      result = result + symbolsToValue[s[i]];
     }
   }
-  return total;
+  return result;
 };
-romanToInt("LVIII");
+romanToInt("MCMXCIV");

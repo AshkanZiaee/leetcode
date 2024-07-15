@@ -5,7 +5,6 @@ function twoSum(nums, target) {
     let complementary = target - nums[i];
     if (myMap.has(complementary)) return [i, myMap.get(complementary)];
     myMap.set(nums[i], i);
-    console.log(myMap);
   }
 }
 

@@ -6,9 +6,9 @@ class ListNode {
 }
 
 var addTwoNumbers = function (l1, l2) {
-  let dumbyHead = new ListNode();
+  let dummyHead = new ListNode();
   let carry = 0;
-  let current = dumbyHead;
+  let current = dummyHead;
   while (l1 !== null || l2 !== null) {
     let sum = carry;
     if (l1) {
@@ -26,5 +26,5 @@ var addTwoNumbers = function (l1, l2) {
     current = current.next;
   }
   if (carry >= 1) current.next = new ListNode(carry);
-  return dumbyHead.next;
+  return dummyHead.next;
 };

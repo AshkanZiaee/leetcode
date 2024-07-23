@@ -7,7 +7,8 @@ var reverse = function (x) {
       isNeg = true;
       break;
     }
-    res += stringifiedNumber[i];
+
+    res += Number(stringifiedNumber[i]);
   }
   res = Number(res);
   if (res > 2 ** 31 - 1) return 0;
@@ -15,4 +16,4 @@ var reverse = function (x) {
   return isNeg ? -1 * res : res;
 };
 
-console.log(reverse(-4560));
+console.log(reverse(23));

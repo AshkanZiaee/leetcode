@@ -1,19 +1,33 @@
 var isValidSudoku = function (board) {
-  let visitedValuesColumns = new Set();
-  for (let i = 0; i < board.length; i++) {
-    let colNumber = board[i][0].charCodeAt() - 48;
-    if (visitedValuesColumns.has(board[i][0])) {
-      return false;
-    } else if (colNumber >= 0 && colNumber <= 9) {
-      visitedValuesColumns.add(board[i][0]);
+  for (let i = 0; i < 9; i++) {
+    let visitedValuesCol = new Set();
+    let visitedValuesRow = new Set();
+    for (let j = 0; j < 9; j++) {
+      let rowValue = board[i][j];
+      let colValue = board[j][i];
+      if (rowValue !== ".") {
+        if (visitedValuesRow.has(rowValue)) return false;
+        visitedValuesRow.add(rowValue);
+      }
+
+      if (colValue !== ".") {
+        if (visitedValuesCol.has(colValue)) return false;
+        visitedValuesCol.add(colValue);
+      }
     }
-    let visitedValuesRows = new Set();
-    for (let j = 0; j < board[i].length; j++) {
-      let rowNumber = board[i][j].charCodeAt() - 48;
-      if (visitedValuesRows.has(board[i][j])) {
-        return false;
-      } else if (rowNumber >= 0 && rowNumber <= 9) {
-        visitedValuesRows.add(board[i][j]);
+  }
+
+  for (let boxRow = 0; boxRow < 3; boxRow++) {
+    for (let boxCol = 0; boxCol < 3; boxCol++) {
+      let visitedValuesBox = new Set();
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          let currentValue = board[boxRow * 3 + i][boxCol * 3 + j];
+          if (currentValue !== ".") {
+            if (visitedValuesBox.has(currentValue)) return false;
+            visitedValuesBox.add(currentValue);
+          }
+        }
       }
     }
   }
@@ -33,3 +47,4 @@ console.log(
     [".", ".", ".", ".", ".", ".", ".", ".", "."],
   ]),
 );
+// 0 0, 1 0, 2 0, 3 0, 4 0, 0 1, 1 1, 2, 1

@@ -7,12 +7,16 @@ var isValidSudoku = function (board) {
       let colValue = board[j][i];
       if (rowValue !== ".") {
         if (visitedValuesRow.has(rowValue)) return false;
-        visitedValuesRow.add(rowValue);
+        else {
+          visitedValuesRow.add(rowValue);
+        }
       }
 
       if (colValue !== ".") {
         if (visitedValuesCol.has(colValue)) return false;
-        visitedValuesCol.add(colValue);
+        else {
+          visitedValuesCol.add(colValue);
+        }
       }
     }
   }
@@ -25,7 +29,9 @@ var isValidSudoku = function (board) {
           let currentValue = board[boxRow * 3 + i][boxCol * 3 + j];
           if (currentValue !== ".") {
             if (visitedValuesBox.has(currentValue)) return false;
-            visitedValuesBox.add(currentValue);
+            else {
+              visitedValuesBox.add(currentValue);
+            }
           }
         }
       }
@@ -36,15 +42,15 @@ var isValidSudoku = function (board) {
 
 console.log(
   isValidSudoku([
-    [".", ".", "4", ".", ".", ".", "6", "3", "."],
-    [".", ".", ".", ".", ".", ".", ".", ".", "."],
-    ["5", ".", ".", ".", ".", ".", ".", "9", "."],
-    [".", ".", ".", "5", "6", ".", ".", ".", "."],
-    ["4", ".", "3", ".", ".", ".", ".", ".", "1"],
-    [".", ".", ".", "7", ".", ".", ".", ".", "."],
-    [".", ".", ".", "5", ".", ".", ".", ".", "."],
-    [".", ".", ".", ".", ".", ".", ".", ".", "."],
-    [".", ".", ".", ".", ".", ".", ".", ".", "."],
+    ["5", "3", ".", ".", "7", ".", ".", ".", "."],
+    ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+    [".", "9", "8", ".", ".", ".", ".", "6", "."],
+    ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+    ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+    ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+    [".", "6", ".", ".", ".", ".", "2", "8", "."],
+    [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+    [".", ".", ".", ".", "8", ".", ".", "7", "9"],
   ]),
 );
 // 0 0, 1 0, 2 0, 3 0, 4 0, 0 1, 1 1, 2, 1

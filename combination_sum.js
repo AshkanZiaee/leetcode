@@ -1,12 +1,19 @@
 var combinationSum = function (candidates, target) {
-  candidates = candidates.sort((a, b) => a - b);
   let result = [];
-  for (let i = 0; i < candidates.length; i++) {
-    let j = i + 1;
-    let k = candidates.length - 1;
-    let sum = candidates[i];
-    while (j < k) {
-      if (sum === target) result.push(sum).toExponential;
+  function backtrack(remaining, start, path) {
+    if (remaining === 0) {
+      result.push([...path]);
+      return;
+    } else if (remaining < 0) {
+      return;
+    }
+
+    for (let i = start; i < candidates.length; i++) {
+      path.push(candidates[i]);
+      backtrack(remaining - candidates[i], i, path);
+      path.pop();
     }
   }
+  backtrack(target, 0, []);
+  return result;
 };

@@ -1,6 +1,6 @@
 var combinationSum2 = function (candidates, target) {
   let result = [];
-  candiates = candidates.sort((a, b) => a - b);
+  candidates = candidates.sort((a, b) => a - b);
   function backtrack(remaining, start, path) {
     if (remaining === 0) {
       result.push([...path]);

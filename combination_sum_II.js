@@ -16,3 +16,5 @@ var combinationSum2 = function (candidates, target) {
   backtrack(target, 0, []);
   return result;
 };
+
+combinationSum2([2, 5, 2, 1, 2], 5);

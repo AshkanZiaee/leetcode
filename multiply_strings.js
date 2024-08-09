@@ -7,8 +7,8 @@ var multiply = function (num1, num2) {
     for (let j = 0; j < num2.length; j++) {
       let product = (num1[i] - "0") * (num2[j] - "0");
       let tempSum = resultArr[i + j] + product;
-      resultArr[i + j + 1] += Math.floor(tempSum / 10);
       resultArr[i + j] = tempSum % 10;
+      resultArr[i + j + 1] += Math.floor(tempSum / 10);
     }
   }
   resultArr = resultArr.reverse();
@@ -18,4 +18,4 @@ var multiply = function (num1, num2) {
   return resultArr.join("");
 };
 
-console.log(multiply("123", "456"));
+console.log(multiply("12", "34"));

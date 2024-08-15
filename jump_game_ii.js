@@ -1,4 +1,5 @@
 var jump = function (nums) {
+  if (nums.length === 1) return 0;
   let jumps = 0;
   let currentEnd = 0;
   let farthest = 0;

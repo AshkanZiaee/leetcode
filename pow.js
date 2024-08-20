@@ -11,4 +11,4 @@ var myPow = function (x, n) {
   }
 };
 
-console.log(myPow(-3, -5));
+console.log(myPow(2, 10));

@@ -4,6 +4,8 @@ var lengthOfLastWord = function (s) {
     i--;
   }
   s = s.slice(0, i + 1);
-  s = s.split(" ");
+  s = s.split("");
   return s[s.length - 1].length;
 };
+
+lengthOfLastWord("   fly me   to   the moon  ");

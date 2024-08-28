@@ -13,6 +13,7 @@ var uniquePaths = function (m, n) {
       dp[row][column] = dp[row - 1][column] + dp[row][column - 1];
     }
   }
-  console.log(dp);
   return dp[m - 1][n - 1];
 };
+
+uniquePaths(3, 4);

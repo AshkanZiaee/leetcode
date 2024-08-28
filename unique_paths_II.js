@@ -32,6 +32,5 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
       }
     }
   }
-  console.log(grid);
   return grid[m - 1][n - 1];
 };

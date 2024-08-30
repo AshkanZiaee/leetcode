@@ -3,8 +3,6 @@ var canJump = function (nums) {
   for (let i = 0; i < nums.length; i++) {
     if (i > maxReach) return false;
     maxReach = Math.max(maxReach, i + nums[i]);
-    console.log("maxReach", maxReach);
-    console.log("___________");
   }
   return true;
 };

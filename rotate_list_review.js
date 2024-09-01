@@ -18,7 +18,3 @@ var rotateRight = function (head, k) {
   tail.next = null;
   return head;
 };
-length = 5;
-k = 1;
-let count = length - (k % length);
-console.log(count);

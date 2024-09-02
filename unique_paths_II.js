@@ -6,6 +6,7 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
   const grid = Array(m)
     .fill(0)
     .map(() => Array(n).fill(0));
+
   for (let row = 0; row < m; row++) {
     if (obstacleGrid[row][0] === 1) {
       grid[row][0] = 0;

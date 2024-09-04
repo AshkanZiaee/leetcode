@@ -1,7 +1,3 @@
-/**
- * @param {number[][]} grid
- * @return {number}
- */
 var minPathSum = function (grid) {
   const m = grid.length;
   const n = grid[0].length;
@@ -25,7 +21,3 @@ var minPathSum = function (grid) {
   }
   return dp[m - 1][n - 1];
 };
-
-Array(m)
-  .fill(0)
-  .map(() => Array(n).fill(0));

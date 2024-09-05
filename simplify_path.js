@@ -1,5 +1,6 @@
 var simplifyPath = function (path) {
   path = path.split("/");
+  console.log(path);
   const stack = [];
   for (let i = 0; i <= path.length - 1; i++) {
     let char = path[i];
@@ -11,4 +12,4 @@ var simplifyPath = function (path) {
   }
   return "/" + stack.join("/");
 };
-console.log(simplifyPath("/home/user/Documents/../Pictures"));
+console.log(simplifyPath("/home/./user/../docs/"));

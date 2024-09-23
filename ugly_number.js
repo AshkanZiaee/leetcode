@@ -5,3 +5,5 @@ var isUgly = function (n) {
   while (n % 2 === 0) n = n / 2;
   return n === 1;
 };
+
+console.log(isUgly(16));

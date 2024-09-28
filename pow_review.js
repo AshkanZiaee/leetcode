@@ -10,5 +10,3 @@ var myPow = function (x, n) {
     return x * myPow(x * x, Math.floor(n / 2));
   }
 };
-
-console.log(myPow(2, 10));

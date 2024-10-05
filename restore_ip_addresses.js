@@ -24,3 +24,5 @@ var restoreIpAddresses = function (s) {
   backtrack(0, []);
   return result;
 };
+
+console.log(restoreIpAddresses("25525511135"));

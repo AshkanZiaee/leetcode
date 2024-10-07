@@ -11,5 +11,8 @@ var majorityElement = function (nums) {
       count--;
     }
   }
+  console.log(count);
   return candidate;
 };
+
+console.log([3, 3, 2, 2, 2, 3, 3]);

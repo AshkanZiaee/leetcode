@@ -15,3 +15,5 @@ var lengthOfLongestSubstring = function (s) {
 };
 
 lengthOfLongestSubstring("pwwkew");
+
+console.log("sdusbs".split("").sort().join(""))

@@ -9,8 +9,6 @@ var isPalindrome = function (s) {
     )
       updatedString += s[i];
   }
-  console.log(updatedString);
   return updatedString === updatedString.split("").reverse().join("");
 };
-
 console.log(isPalindrome("A man, a plan, a canal: Panama"));

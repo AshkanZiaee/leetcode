@@ -30,4 +30,3 @@ var swapPairs = function (head) {
 swapPairs(head);
 
 
-console.log("sdusbs".sort((a,b) => a - b))
